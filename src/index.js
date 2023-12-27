@@ -1,17 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import MeuNome from './MeuNome';
+import BotaoLegal from './BotaoLegal';
+import Titulo from './Titulo';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Localizacao from './pages/Localizacao';
+import Contato from './pages/Contato';
+import Inicio from './pages/Inicio';
+import SobreNos from './pages/SobreNos';
+import NossosClientes from './pages/NossosClientes';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+const nome = 'Robson'
+
+const router= createBrowserRouter([
+
+{
+  path:'/',
+  element:<Inicio/>
+},
+{
+  path:'/sobre-nos',
+  element:<SobreNos/>
+},
+{
+path:'/contato',
+element:<Contato/>
+},
+{
+  path:'/nossos-clientes',
+  element:<NossosClientes/>
+},
+{
+  path:'/localizacao',
+  element:<Localizacao/>
+  }
+])
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <RouterProvider router = {router}/>
+
+  //<div>
+    //{/* <BotaoLegal texto = "Fazer login" emoji="😃"/> 
+    //<BotaoLegal texto = " Me cadastrar"emoji ="🗡"/>
+    //<Titulo texto = "Escreva seu título" emoji = "👍"/>
+    //<Titulo texto = "Seja bem vindo"/>
+    //<Titulo texto = "Boa noite"/> */}
+     
+ //<a href="">Home</a>
+ //<a href="">Sobre Nós</a>
+ //<a href="">Contato</a>
+ //<a href="">Nossos Clientes</a>
+ //<a href="">Localização</a>
+//</div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
